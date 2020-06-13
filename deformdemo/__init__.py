@@ -70,10 +70,10 @@ class demonstrate(object):
 # Py2/Py3 compat
 # http://stackoverflow.com/a/16888673/315168
 # eliminate u''
-def my_safe_repr(object, context, maxlevels, level):
+def my_safe_repr(object, context, maxlevels, level, sort_dicts=True):
     if type(object) == unicode:
         object = object.encode("utf-8")
-    return pprint._safe_repr(object, context, maxlevels, level)
+    return pprint._safe_repr(object, context, maxlevels, level, sort_dicts)
 
 
 @view_defaults(route_name='deformdemo')
